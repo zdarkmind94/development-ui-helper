@@ -1,0 +1,139 @@
+/*--------------------------------------
+Design for form 
+- different types of input
+- textarea
+----------------------------------------*/
+
+* {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.form-wrapper {
+	padding: 10px;
+	display: inline-block;
+	height: auto;
+}
+
+.input-field {
+	padding: 10px;
+	display: inline-block;
+}
+
+.input-field input {
+	width: 100%;
+	padding: 5px;
+	border: 0px;
+	border-bottom: 2px solid #9370DB;
+}
+
+.input-field input:focus {
+	outline: none;
+}
+
+.normal {
+	border-bottom: 2px solid #9370DB;
+}
+
+.invalid {
+	border-bottom: 2px solid #FF0000 !important;
+}
+
+.succeed {
+	border-bottom: 2px solid #228B22 !important;
+}
+
+/* Change the white to any color ;) */
+/*input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}*/
+
+.input-radio-field {
+	padding: 5px;
+	padding-left: 25px;
+	display: inline-block;
+	position: relative;
+}
+
+.input-radio-field input{
+	display: inline-block;
+	background-color: white;
+	width: auto;
+	position: absolute;
+	left: 0px;
+}
+
+input[type="radio"]:checked:before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #9370DB ;
+}
+
+.submit-button {
+	padding: 10px;
+}
+
+.submit-button a {
+	background-color: white;
+	border: 2px solid #9370DB;
+	color: #9370DB;
+	padding: 10px;
+}
+
+.submit-button a:hover {
+	text-decoration: none;
+	background-color: #9370DB;
+	border: 2px solid #9370DB;
+	color: white;
+	padding: 10px;
+	cursor:pointer;
+}
+
+.input-field-icon {
+	position: relative;
+	padding: 10px;
+	display: inline-block;
+}
+
+.input-field-icon input {
+	margin-left: 25px;
+	display: inline-block;
+	padding: 5px;
+	border: 0px;
+	border-bottom: 2px solid #9370DB;
+}
+
+.input-field-icon input:focus {
+	outline: none;
+}
+
+.input-field-icon .normal-icon {
+	position: absolute;
+	top: 16px;
+	left: 0px;
+}
+
+.radio-icon {
+	margin-left: 20px;
+}
+
+.first {
+	margin-right: 5px;
+}
+
+a:focus {
+	outline: none;
+}
+
+
+
+
+

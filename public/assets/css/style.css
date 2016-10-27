@@ -1,0 +1,23 @@
+*{
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+
+body{
+	background-color: #e9ebee;
+    color: #1d2129;
+    font-family: helvetica, arial, sans-serif;
+}
+
+.patrat {
+	background-color: red;
+	height: 50px;
+}
+
+.patrat2 {
+	background-color: green;
+	height: 50px;
+}
+
