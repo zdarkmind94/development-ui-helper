@@ -1,14 +1,15 @@
 var currentIndex = 0,
-  items = $('.container div'),
+  items = $('.container-carousel div'),
   itemAmt = items.length;
 
 function cycleItems() {
-  var item = $('.container div').eq(currentIndex);
+  var item = $('.container-carousel div').eq(currentIndex);
   items.hide();
   item.css('display','inline-block');
 }
 
 var autoSlide = setInterval(function() {
+  console.log('in functie');
   currentIndex += 1;
   if (currentIndex > itemAmt - 1) {
     currentIndex = 0;

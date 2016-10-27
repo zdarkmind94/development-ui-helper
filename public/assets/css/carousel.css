@@ -1,29 +1,52 @@
-.container {
-  max-width: 400px;
+.carousel-wrapper {
+  position: relative;
+}
+
+.container-carousel {
   background-color: black;
   margin: 0 auto;
   text-align: center;
-  position: relative;
 }
-.container div {
+.container-carousel div {
+  max-height: 400px;
   background-color: white;
-  width: 100%;
   display: inline-block;
   display: none;
-}
-.container img {
-  width: 100%;
-  height: auto;
+  overflow: hidden;
 }
 
-button {
+.container-carousel img {
+  display: block;
+  /* Otherwise it keeps some space around baseline */
+  width: 100%;
+  /* Scale up to fill container width */
+  height: 100%;
+  /* Scale up to fill container height */
+  -ms-interpolation-mode: bicubic;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.button-carousel {
   position: absolute;
 }
 
 .next {
-  right: 5px;
+  top: 50%;
+  right: 0px;
+  transform: translate(-50%, -50%);
 }
 
 .prev {
-  left: 5px;
+  top: 50%;
+  left: 7px;
+  transform: translate(-50%, -50%);
 }
+
+@media only screen and (max-width: 768px) {
+      .container-carousel div {
+        height: 250px;
+      }
+    
+    }
+
