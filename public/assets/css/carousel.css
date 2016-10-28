@@ -31,6 +31,10 @@
   position: absolute;
 }
 
+.button-carousel:hover {
+  cursor: pointer;
+}
+
 .next {
   top: 50%;
   right: 0px;
@@ -50,3 +54,19 @@
     
     }
 
+.progress-slider {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress {
+  width: 10px;
+  height: 10px;
+  box-sizing:border-box;
+  border: 1px solid white;
+  display: inline-block;
+  margin: 5px;
+
+}
