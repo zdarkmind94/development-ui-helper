@@ -6,6 +6,7 @@
   background-color: black;
   margin: 0 auto;
   text-align: center;
+  overflow: hidden;
 
 }
 .container-carousel div {
@@ -13,7 +14,6 @@
   background-color: white;
   display: inline-block;
   display: none;
-  overflow: hidden;
 }
 
 .container-carousel img {
@@ -28,6 +28,23 @@
   overflow: hidden;
 }
 
+.left-pos
+{
+    left: 0;
+    transition-property: left;
+    transition-duration: 10s;
+    transition-timing: ease;
+    transition-delay: 0;
+}
+.right-pos
+{
+    left: 100px;
+    transition-property: left;
+    transition-duration: 2s;
+    transition-timing: ease;
+    transition-delay: 0;
+}
+ 
 
 
 .button-carousel {
