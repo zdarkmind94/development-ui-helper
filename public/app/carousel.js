@@ -1,5 +1,10 @@
 
 
+/* *Initialize the first index position
+  *Save the carousel items in an array
+  *Save the carousel length
+  *Create a variable for draggable element
+*/
 
 var currentIndex = 0,
   items = $('.container-carousel div'),
@@ -8,18 +13,30 @@ var prevX = -1;
 
 var dragged;
 
+/*
+  *For each carousel element add a custom progress icon
+*/
 items.each(addProgress);
 
-
+/*
+  * Add an progress icon for each carousel element
+*/
 function addProgress(){
   $('.progress-slider').append('<div class="progress"></div>');
 }
+
+// Save the custom progress items in an array
 var itemsProgress = $('.progress-slider div');
 
 
 
 
-
+/*
+  * Save the item current from carousel and make it display: inline block
+  * Save the item current from progress icons and change its background color
+  * Make all items display:none
+  * Change the background color of all progress elements to transparent
+*/
 function cycleItems() {
   var item = $('.container-carousel div').eq(currentIndex);
   var itemProgress = $('.progress-slider div').eq(currentIndex);
@@ -29,9 +46,13 @@ function cycleItems() {
   itemProgress.css('background-color','white');
 }
 
+
+/*
+  *Auto slide carousel items 
+*/
+
 (function Slide(){
   var autoSlide = setInterval(function() {
-  console.log('in functie');
   currentIndex += 1;
   if (currentIndex > itemAmt - 1) {
     currentIndex = 0;
@@ -70,7 +91,6 @@ document.addEventListener("drag", function( event ) {
 
 
 document.addEventListener("dragstart", function( e ) {
-    console.log("start");
       // store a ref. on the dragged elem
       dragged = event.target;
       // make it half transparent
@@ -80,21 +100,18 @@ document.addEventListener("dragstart", function( e ) {
 
 
 document.addEventListener("dragend", function(e){
-  console.log("end");
   event.target.style.opacity ="";
   if(prevX > e.pageX) {
-    console.log('dragged left');
+    // dragged left
     currentIndex += 1;
     if (currentIndex > itemAmt - 1) {
       currentIndex = 0;
     }
-    console.log('inside');
     event.target.style.opacity = "";
     cycleItems();
   }
   else if(prevX < e.pageX) { 
     // dragged right
-    console.log('dragged right');
     currentIndex -= 1;
     if (currentIndex < 0) {
       currentIndex = itemAmt - 1;
@@ -103,6 +120,41 @@ document.addEventListener("dragend", function(e){
   }
   
 });
+
+document.addEventListener('touchstart',function(e){
+  var touchobj = e.changedTouches[0];
+  dragged = event.target;
+  prevX = parseInt(touchobj.clientX);
+  event.target.style.opacity = .5;
+},false);
+
+
+document.addEventListener("touchend", function(e){
+  var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
+  event.target.style.opacity ="";
+  var currentX = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
+  if(prevX > currentX) {
+    // dragged left
+    currentIndex += 1;
+    if (currentIndex > itemAmt - 1) {
+      currentIndex = 0;
+    }
+    event.target.style.opacity = "";
+    cycleItems();
+  }
+  else if(prevX < currentX) { 
+    // dragged right
+    currentIndex -= 1;
+    if (currentIndex < 0) {
+      currentIndex = itemAmt - 1;
+    }
+    cycleItems();
+  }
+  
+});
+
+
+
 
 
 
